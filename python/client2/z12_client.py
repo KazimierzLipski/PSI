@@ -32,10 +32,10 @@ if __name__ == "__main__":
                 print(f"Sending {len(data)} bytes of data...   ", end="")
                 s.sendto(data, (server_name, server_port))
                 print("Sent")
-                lower = middle
+                lower = middle + 1
             except OSError:
                 print("Too big!")
-                upper = middle
+                upper = middle - 1
 
             sleep(0.5)
 
