@@ -1,0 +1,4 @@
+FROM gcc:4.9
+ADD z11_client.c /
+RUN gcc -std=gnu99 -o client_c z11_client.c
+ENTRYPOINT ["./client_c"]

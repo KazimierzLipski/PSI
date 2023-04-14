@@ -1,0 +1,4 @@
+FROM gcc:4.9
+ADD z11_server.c /
+RUN gcc -o server_c z11_server.c
+ENTRYPOINT ["./server_c"]

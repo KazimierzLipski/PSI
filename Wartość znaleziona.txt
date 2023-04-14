@@ -1,0 +1,1 @@
+Wartość dla której występuje błąd w zadaniu 1.2 to 65508, jest tak ponieważ przesłyłamy po IPv4, po IPv6 wartość byłaby inna.
