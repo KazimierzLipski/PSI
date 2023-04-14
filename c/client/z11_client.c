@@ -6,6 +6,7 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <string.h>
+#include <unistd.h>
 
 int main(int argc, char **argv)
 {
@@ -68,6 +69,7 @@ int main(int argc, char **argv)
       return 1;
     }
     printf("Wysłano %d bajtów do serwera\n", wyslana_wiadomosc);
+    sleep(0.5)
   }
 
   return 0;
