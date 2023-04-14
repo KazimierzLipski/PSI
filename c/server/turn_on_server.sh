@@ -1,13 +1,13 @@
 #!/bin/bash
 
 sh ./create_container.sh
-sh "clear"
+reset
 echo "
 Container created
 "
 sh "docker images | grep z33"
 sleep 1s
-sh "clear"
+reset
 echo "
 Running container...
 "
