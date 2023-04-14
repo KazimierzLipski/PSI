@@ -3,6 +3,10 @@ import argparse
 from random import choices
 import string
 from time import sleep
+import math
+
+def getMiddle(lower: int, upper: int):
+    return math.floor((lower+upper)/2)
 
 def generate_data(size):
     rand_str = ''.join(choices(string.ascii_letters, k=size))
@@ -20,14 +24,20 @@ if __name__ == "__main__":
 
     data_sizes = [1, 100, 300, 500, 5000, 25000, 32500, 40000, 59000, 69000, 65507, 65508]
 
+    lower = 1
+    upper = 100000
+
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-        for data_size in data_sizes:
-            data = generate_data(data_size)
+        while lower != upper:
+            middle = getMiddle(lower, upper)
+            data = generate_data(middle)
             try:
                 print(f"Sending {len(data)} bytes of data...   ", end="")
                 s.sendto(data, (server_name, server_port))
                 print("Sent")
+                lower = middle
             except OSError:
                 print("Too big!")
+                upper = middle
 
             sleep(0.5)
