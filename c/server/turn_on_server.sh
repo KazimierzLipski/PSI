@@ -5,7 +5,7 @@ reset
 echo "
 Container created
 "
-sh "docker images | grep z33"
+docker images | grep z33
 sleep 1s
 reset
 echo "
