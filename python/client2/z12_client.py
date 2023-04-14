@@ -3,10 +3,9 @@ import argparse
 from random import choices
 import string
 from time import sleep
-import math
 
 def getMiddle(lower: int, upper: int):
-    return math.floor((lower+upper)/2)
+    return round((lower+upper)/2)
 
 def generate_data(size):
     rand_str = ''.join(choices(string.ascii_letters, k=size))
@@ -21,8 +20,6 @@ if __name__ == "__main__":
 
     server_name = args.server_name
     server_port = int(args.server_port)
-
-    data_sizes = [1, 100, 300, 500, 5000, 25000, 32500, 40000, 59000, 69000, 65507, 65508]
 
     lower = 1
     upper = 100000
@@ -41,3 +38,5 @@ if __name__ == "__main__":
                 upper = middle
 
             sleep(0.5)
+
+    print("The size at which the packet cant be sent is " + middle + " bytes")
