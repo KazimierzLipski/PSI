@@ -6,16 +6,17 @@ reset
 echo "
 Container created
 "
-docker images | grep z33_task1_1_c_server
+docker images | grep z33_task1_1_python_client
 sleep 5s
 reset
 echo "
 Running container...
 "
-sh ./run_container.sh
+sh ./run_container.sh $1
 echo "
 Container created"
-docker ps | grep z33_task1_1_c_server
-sleep 3s
-clear
-docker logs --follow z33_c_server
+docker ps | grep z33_task1_1_python_client
+sleep 5s
+reset
+sh ./off.sh
+reset
