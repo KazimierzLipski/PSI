@@ -12,6 +12,6 @@ reset
 echo "
 Running container...
 "
-sh ./run_container.sh $1
+sh ./run_container.sh $1 $2
 sleep 2s
 reset
