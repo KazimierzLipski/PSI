@@ -5,7 +5,8 @@ import string
 from time import sleep
 
 def getMiddle(lower: int, upper: int):
-    return round((lower+upper)/2)
+
+    return round((lower+upper)/2) + 1
 
 def generate_data(size):
     rand_str = ''.join(choices(string.ascii_letters, k=size))
@@ -32,11 +33,11 @@ if __name__ == "__main__":
                 print(f"Sending {len(data)} bytes of data...   ", end="")
                 s.sendto(data, (server_name, server_port))
                 print("Sent")
-                lower = middle + 1
+                lower = middle
             except OSError:
                 print("Too big!")
-                upper = middle - 1
+                upper = middle
 
             sleep(0.5)
 
-    print("The size at which the packet cant be sent is " + middle + " bytes")
+    print("Maksymalny datagram jaki jest obsługiwany to " + middle + " bajtów")
