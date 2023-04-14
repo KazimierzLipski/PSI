@@ -3,10 +3,10 @@ import argparse
 from random import choices
 import string
 from time import sleep
+import math
 
 def getMiddle(lower: int, upper: int):
-
-    return round((lower+upper)/2) + 1
+    return math.floor((lower+upper)/2)
 
 def generate_data(size):
     rand_str = ''.join(choices(string.ascii_letters, k=size))
@@ -24,9 +24,10 @@ if __name__ == "__main__":
 
     lower = 1
     upper = 100000
+    lastMiddle = getMiddle(lower, upper)
 
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-        while lower != upper:
+        while lastMiddle != middle:
             middle = getMiddle(lower, upper)
             data = generate_data(middle)
             try:
@@ -37,7 +38,7 @@ if __name__ == "__main__":
             except OSError:
                 print("Too big!")
                 upper = middle
-
+            lastMiddle = middle
             sleep(0.5)
 
     print("Maksymalny datagram jaki jest obsługiwany to " + middle + " bajtów")
