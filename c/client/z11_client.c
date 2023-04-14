@@ -69,7 +69,7 @@ int main(int argc, char **argv)
       return 1;
     }
     printf("Wysłano %d bajtów do serwera\n", wyslana_wiadomosc);
-    sleep(1)
+    sleep(1);
   }
 
   return 0;
