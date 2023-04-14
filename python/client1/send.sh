@@ -13,10 +13,5 @@ echo "
 Running container...
 "
 sh ./run_container.sh $1
-echo "
-Container created"
-docker ps | grep z33_task1_1_python_client
-sleep 5s
-reset
-sh ./off.sh
+sleep 2s
 reset
