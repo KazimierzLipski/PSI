@@ -7,7 +7,7 @@ echo "
 Container created
 "
 docker images | grep z33
-sleep 5s
+sleep 10s
 reset
 echo "
 Running container...
