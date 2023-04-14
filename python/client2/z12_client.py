@@ -29,6 +29,7 @@ if __name__ == "__main__":
 
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         while lastMiddle != middle:
+            lastMiddle = middle
             middle = getMiddle(lower, upper)
             data = generate_data(middle)
             try:
@@ -39,7 +40,7 @@ if __name__ == "__main__":
             except OSError:
                 print("Too big!")
                 upper = middle
-            lastMiddle = middle
+
             sleep(0.5)
 
     print("Maksymalny datagram jaki jest obsługiwany to " + middle + " bajtów")
