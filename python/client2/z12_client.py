@@ -43,4 +43,4 @@ if __name__ == "__main__":
 
             sleep(0.5)
 
-    print("Maksymalny datagram jaki jest obsługiwany to " + middle + " bajtów")
+    print("Maksymalny datagram jaki jest obsługiwany to " + str(middle) + " bajtów")
