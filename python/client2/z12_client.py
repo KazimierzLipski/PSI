@@ -25,6 +25,7 @@ if __name__ == "__main__":
     lower = 1
     upper = 100000
     lastMiddle = getMiddle(lower, upper)
+    middle = -1
 
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         while lastMiddle != middle:
