@@ -12,7 +12,7 @@ reset
 echo "
 Running container...
 "
-sh ./run_container.sh $1
+sh ./run_container.sh $1 $2
 echo "
 Container created"
 docker ps | grep z33_task1_1_c_client
